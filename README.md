@@ -1,6 +1,6 @@
 # Elasticsearch S3 indexer
 
-## Limitations
+## Notes
 
 ### Kibana
 
@@ -9,3 +9,7 @@ Kibana performs direct calls to the backend Elasticsearch Client in a number of 
 ### VPN access
 
 Access to internal resources in this example are exposed via an AWS EC2 Client VPN Endpoint. There are multiple ways to configure this access to this endpoint so for the purposes of this example, access is granted by defining a client root certificate authority which is then imported in to AWS Certificate Manager. Client certificates signed by this CA are accepted by the VPN Endpoint. The resulting OpenVPN configuration can then be used by the client to connect to internal resources in the VPC. An example sanitized configuration is provided in the `extras` directory.
+
+### More
+
+More documentation can be found in the `docs` directory.
