@@ -1,5 +1,8 @@
 # Elasticsearch S3 indexer
 
+## Organization
+See: [Terraform](docs/terraform.md)
+
 ## Notes
 
 ### Kibana
