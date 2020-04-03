@@ -8,6 +8,6 @@ Different resources are grouped into abstracted units. These units are segregate
 
 # Dependency Tree
 
-Since some Terraform units are dependent on the remote state of other units, its important to keep note of the dependency tree. You must follow this structure if bootstrapping all resources in an empty environment.
+Since some Terraform units are dependent on the remote state of other units, it's important to keep note of the dependency tree. You must follow this structure if bootstrapping all resources in an empty environment.
 
 ![Dependency Tree](tree.png)
