@@ -195,7 +195,7 @@ resource "aws_lambda_function" "s3esdelete" {
   runtime = "python3.7"
 
   vpc_config {
-    subnet_ids = data.terraform_remote_state.vpc.outputs.nat_subnets
+    subnet_ids         = data.terraform_remote_state.vpc.outputs.nat_subnets
     security_group_ids = [data.terraform_remote_state.vpc.outputs.default_security_group_id]
   }
 
@@ -233,7 +233,7 @@ resource "aws_lambda_function" "s3esindex" {
   runtime = "python3.7"
 
   vpc_config {
-    subnet_ids = data.terraform_remote_state.vpc.outputs.nat_subnets
+    subnet_ids         = data.terraform_remote_state.vpc.outputs.nat_subnets
     security_group_ids = [data.terraform_remote_state.vpc.outputs.default_security_group_id]
   }
 
@@ -251,7 +251,7 @@ resource "aws_s3_bucket_notification" "bucket_notification" {
     lambda_function_arn = aws_lambda_function.s3esdelete.arn
     events              = ["s3:ObjectRemoved:*"]
   }
-  
+
   lambda_function {
     lambda_function_arn = aws_lambda_function.s3esindex.arn
     events              = ["s3:ObjectCreated:*"]

@@ -51,7 +51,7 @@ resource "aws_elasticsearch_domain" "prd" {
 
   vpc_options {
     security_group_ids = [data.terraform_remote_state.vpc.outputs.default_security_group_id]
-    subnet_ids = slice(data.terraform_remote_state.vpc.outputs.private_subnets, 0, 2)
+    subnet_ids         = slice(data.terraform_remote_state.vpc.outputs.private_subnets, 0, 2)
   }
 
   snapshot_options {

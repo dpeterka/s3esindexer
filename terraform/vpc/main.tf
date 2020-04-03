@@ -38,7 +38,7 @@ resource "aws_vpc" "prd" {
 resource "aws_subnet" "public" {
   count             = length(var.availability_zones)
   vpc_id            = aws_vpc.prd.id
-  cidr_block        = cidrsubnet(aws_vpc.prd.cidr_block, 8, count.index+32)
+  cidr_block        = cidrsubnet(aws_vpc.prd.cidr_block, 8, count.index + 32)
   availability_zone = var.availability_zones[count.index]
 
   tags = {
@@ -109,7 +109,7 @@ resource "aws_route_table" "public" {
   vpc_id = aws_vpc.prd.id
 
   route {
-    cidr_block     = "0.0.0.0/0"
+    cidr_block = "0.0.0.0/0"
     gateway_id = aws_internet_gateway.gw.id
   }
 }

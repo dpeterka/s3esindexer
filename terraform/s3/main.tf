@@ -25,9 +25,9 @@ resource "aws_s3_bucket" "tracked_bucket" {
 }
 
 resource "aws_iam_role" "user_upload" {
-    name = "dataUploader"
+  name = "dataUploader"
 
-      assume_role_policy = <<EOF
+  assume_role_policy = <<EOF
 {
    "Version":"2012-10-17",
    "Statement":[
